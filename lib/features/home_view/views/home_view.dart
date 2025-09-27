@@ -13,7 +13,8 @@ class HomeView extends StatelessWidget {
         child: CustomScrollView(
           physics: BouncingScrollPhysics(),
           slivers: [
-            SliverToBoxAdapter(child: Row(
+            SliverToBoxAdapter(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
@@ -33,11 +34,12 @@ class HomeView extends StatelessWidget {
                     "Cloud",
                   ),
                 ],
-              ),),
-            SliverToBoxAdapter(child:SizedBox(height: 10.h),),
-            SliverToBoxAdapter(child:CategoriesListView() ,),
-            SliverToBoxAdapter(child:SizedBox(height: 10.h),),
-            NewsTileListView()
+              ),
+            ),
+            SliverToBoxAdapter(child: SizedBox(height: 10.h)),
+            SliverToBoxAdapter(child: CategoriesListView()),
+            SliverToBoxAdapter(child: SizedBox(height: 10.h)),
+            NewsTileListView(),
           ],
         ),
         // child: Column(
