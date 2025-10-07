@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:news_cloud/features/home_view/data/models/news_model.dart';
 
 import '../../../../core/utils/app_assets.dart';
 
 class NewsTile extends StatelessWidget {
-  const NewsTile({super.key});
+  const NewsTile({super.key, required this.articleModel});
+  final ArticleModel articleModel;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +18,7 @@ class NewsTile extends StatelessWidget {
             width: double.infinity,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(16.r),
-              child: Image.asset(AppAssets.mainImage,fit: BoxFit.fill,),
+              child: Image.network(articleModel.urlToImage,fit: BoxFit.fill,),
             ),
           ),
           Text(
@@ -27,7 +29,7 @@ class NewsTile extends StatelessWidget {
               fontSize: 16.sp,
               fontWeight: FontWeight.w600,
             ),
-            "dshksh khsdjkfhds gdskg sdkkkds sd ghdsjg dsgjsdhgdf hjhgsdjf ghsdfjhgkdjfs  hfkdgsdfhj ",
+            articleModel.title,
           ),
           Text(
             maxLines: 3,
@@ -37,7 +39,7 @@ class NewsTile extends StatelessWidget {
               fontSize: 12.sp,
               fontWeight: FontWeight.w400,
             ),
-            "dshksh khsdjkfhds gdskg hjdshgjdh hjdfhdf ghj dfhjhg fgfjdg h  ghdhfd g DSHKJG JGHDKJGHD FHGKJSDHGDKF GJDHFDKg gshgdjsd ghshfdjghdfslhag ALGEHIGHEROIJGJIKD,N SDNGVDFKGVNDF sdkkkds sd ghdsjg dsgjsdhgdf hjhgsdjf ghsdfjhgkdjfs  hfkdgsdfhj ",
+            articleModel.description,
           ),
           // SizedBox(height: 12.h,)
         ],
