@@ -3,8 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:news_cloud/features/home_view/views/home_view.dart';
 
 void main() {
+   // NewsRepo(Dio()).getNews();
   runApp(const MyApp());
 }
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
